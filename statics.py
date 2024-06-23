@@ -1,7 +1,7 @@
 import pandas as pd
 import streamlit as st
 
-data=pd.read_csv("C:/Users/jnave/Documents/cricket/ipl_data/deliveries.csv")
+data=pd.read_csv("ipl_data/deliveries.csv")
 #print(data.columns)
 
 df=data[['match_id','batter','bowler','batsman_runs','extra_runs','extras_type','total_runs','is_wicket','player_dismissed','dismissal_kind', 'fielder']]
@@ -37,7 +37,7 @@ st.write(f"No of match head to head bowling: {no_of_match}")
 #w=df1['is_wicket']
 wicket=df1[df1['is_wicket']==1]
 no_of_wiket=len(wicket)-wicket_not_by_bowler
-st.write(f"No of wickets: {no_of_wiket} taken by {opponent_player}")
+st.write(f"No of wickets  taken by {opponent_player}: {no_of_wiket}")
 total_ball=len(df1[df1.extras_type!="wides"])
 #st.write(f"Total balls  {selected_player}  faced againest {opponent_player}: {total_ball}")
 no_of_over=total_ball/6
